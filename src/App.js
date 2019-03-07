@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
+import ToDoList from './reducers/ToDoList';
+import { Input } from 'antd';
+
 class App extends Component {
+
   render() {
     return (
         <div className="container">
@@ -10,8 +14,12 @@ class App extends Component {
         <p className="text-center">
         <button onClick={this.props.onIncream}  className="btn btn-primary mr-2">Increase</button>
         <button onClick={this.props.deCrease} className="btn btn-danger my-2">Decrease</button>
+          <ToDoList  linkHeader={this.props.ToDoList}/>
         </p>
         </div>
+
+
+
     );
   }
 }
